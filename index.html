@@ -8,18 +8,13 @@
 <body>
     <script>
         function verificarApp() {
-            // Crea un iframe y trata de cargar el esquema de URL de tu app dentro de él.
-            var iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = 'skeleton.key.payments://24002a001147393037343337';
-            document.body.appendChild(iframe);
+            // Intenta redirigir al esquema de URL de tu app con los parámetros específicos.
+            window.location = 'skeleton.key.payments://24002a001147393037343337';
 
             // Espera un corto tiempo y luego redirige al App Store si la app no se abrió.
             setTimeout(function() {
                 // Verifica si el usuario sigue en la página (la app no se abrió).
-                document.body.removeChild(iframe); // Limpia el iframe para evitar dejar rastro en el DOM.
-
-                // Redirige al App Store.
+                // Reemplaza el URL con el enlace a tu app en el App Store.
                 window.location = 'https://apps.apple.com/es/app/tu-app/id310633997';
             }, 2500); // Ajusta este tiempo según necesidades
         }
